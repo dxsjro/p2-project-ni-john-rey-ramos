@@ -1,0 +1,81 @@
+# ==========================================
+#       STUDENT GRADE & SCHOLARSHIP SYSTEM
+# ==========================================
+
+print("==========================================")
+print("     STUDENT GRADE & SCHOLARSHIP SYSTEM")
+print("==========================================")
+
+name = input("Enter student name: ")
+age = int(input("Enter age: "))
+
+print("\nEnter your grades:")
+
+math = float(input("Math: "))
+science = float(input("Science: "))
+english = float(input("English: "))
+filipino = float(input("Filipino: "))
+pe = float(input("PE: "))
+
+attendance = float(input("\nEnter attendance percentage: "))
+
+# ==========================================
+# CALCULATE AVERAGE
+# ==========================================
+
+average = (math + science + english + filipino + pe) / 5
+
+# ==========================================
+# GRADE RESULT
+# ==========================================
+
+if average >= 90:
+    rating = "Excellent"
+elif average >= 85:
+    rating = "Very Good"
+elif average >= 80:
+    rating = "Good"
+elif average >= 75:
+    rating = "Passed"
+else:
+    rating = "Failed"
+
+# ==========================================
+# SCHOLARSHIP CHECKER
+# ==========================================
+
+if average >= 85:
+    if attendance >= 90:
+        scholarship = "QUALIFIED FOR SCHOLARSHIP"
+        reason = "You meet the grade and attendance requirements."
+    else:
+        scholarship = "NOT QUALIFIED"
+        reason = "Attendance must be at least 90%."
+else:
+    scholarship = "NOT QUALIFIED"
+    reason = "Average grade must be at least 85."
+
+# ==========================================
+# DISPLAY RESULT
+# ==========================================
+
+print("\n==========================================")
+print("              STUDENT RESULT")
+print("==========================================")
+
+print("Student Name :", name)
+print("Age          :", age)
+
+print("------------------------------------------")
+print(f"Average      : {average:.2f}")
+print("Rating       :", rating)
+print("Attendance   :", f"{attendance:.2f}%")
+
+print("------------------------------------------")
+print("SCHOLARSHIP RESULT:")
+print(scholarship)
+print("Reason:", reason)
+
+print("==========================================")
+print("          THANK YOU FOR USING IT!")
+print("==========================================")
